@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAaNa Music Player|Heal All Your Wounds</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <script
+      src="https://kit.fontawesome.com/53340cb732.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="./images/DAaNa.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="">HOME</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">SPECIFICATION</a></li>
+                <li><a href="">PRODUCTS</a></li>
+                <li><a href="">CONTACT</a></li>
+                <i class="fa-solid fa-xmark fas" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars fas" onclick="openmenu()"></i>
+        </div>
+        <div class="content">
+            <div class="left-col">
+                <h1>THE<br>REAL<br>SOUND</h1>
+            </div>
+            <div class="right-col">
+                <p>Click Here to Listen</p>
+                <img src="./images/play.png" id="icon">
+            </div>
+        </div>
+    </div>
+
+    <audio id="mySong">
+        <source src="./images/Heat_Waves_(getmp3.pro).mp3" type="audio/mp3">
+    </audio>
+
+<script>
+    var mySong = document.getElementById("mySong");
+    var icon = document.getElementById("icon");
+    icon.onclick=function(){
+        if(mySong.paused){
+            mySong.play();
+            icon.src= "./images/pause.png";
+        }
+        else{
+            mySong.pause();
+            icon.src= "./images/play.png";
+        }
+    }
+
+
+
+    // --------------sidemenu----------------------
+
+
+    var sidemeu = document.getElementById("sidemenu");
+
+function openmenu(){
+  sidemeu.style.right = "0";
+}
+function closemenu(){
+  sidemeu.style.right = "-200px";
+}
+</script>
+
+</body>
+</html>
